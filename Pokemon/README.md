@@ -29,81 +29,118 @@ This module is part of the **Vision-Based-Image-Classification** project and foc
 ## 🗂️ Project Structure
 
 Pokemon/
+
 ├── images/
-│   ├── train/                    
+
+│   ├── train/  
+
 │   │   ├── bulbasaur/
+
 │   │   ├── charmander/
+
 │   │   └── ...
-│   ├── validation/              
-│   └── test/                    
+│   ├── validation/
+
+│   └── test/   
+
 ├── models/
+
 │   ├── cnn_baseline.h5
+
 │   ├── resnet50_transfer.h5
+
 │   ├── vgg16_transfer.h5
+
 │   └── mobilenet_optimized.h5
+
 ├── notebooks/
-│   ├── Pokemon_Model1.ipynb       
+
+│   ├── Pokemon_Model1.ipynb
+
 │   ├── Pokemon_Model2.ipynb
+
 │   └── Pokemon_images.ipynb
+
 │ 
 ├── src/
+
 │   ├── data_loader.py
+
 │   ├── preprocessing.py
+
 │   ├── model_builder.py
+
 │   ├── trainer.py
+
 │   └── inference.py
+
 ├── results/
+
 │   ├── metrics/
+
 │   ├── confusion_matrices/
+
 │   └── predictions/
 │ 
+
 ├── requirements.txt
+
 ├── README.md
+
 └── REPORT.md
 
 
 ---
-
 ## 🚀 Quick Start
 
 ### Prerequisites
+- Python 3.8+
+- TensorFlow 2.10+
+- PyTorch 1.9+ (optional)
+- CUDA 11.0+ (for GPU acceleration)
 
+### Clone the Repository
 ```bash
-Python 3.8+
-TensorFlow 2.10+
-PyTorch 1.9+ (optional)
-CUDA 11.0+ (for GPU acceleration)
-
----
-
-### Clone the repository
 git clone https://github.com/XC0ID/Vision-Based-Image-Classification.git
 cd Pokemon
+```
 
-### Create virtual environment
+### Create Virtual Environment
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-### Install dependencies
+# Windows
+venv\Scripts\activate
+
+# Linux / Mac
+source venv/bin/activate
+```
+
+### Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ---
 
-## 📊 Dataset Information
+# 📊 Dataset Information
 
-### 📈 Key Metrics
+## 📈 Key Metrics
 
-|Precision:| 0.968 |
-|Recall:   | 0.967 |
-|F1-Score: | 0.967 |
-|AUC-ROC:  | 0.999 |
+| Metric | Score |
+|------|------|
+| Precision | 0.968 |
+| Recall | 0.967 |
+| F1-Score | 0.967 |
+| AUC-ROC | 0.999 |
 
 ---
 
-### 🔧 Configuration
+# ⚙️ Configuration
 
+```yaml
 model:
-  architecture: "resnet50"
+  architecture: resnet50
   pretrained: true
   freeze_layers: 100
 
@@ -111,69 +148,59 @@ training:
   batch_size: 32
   epochs: 50
   learning_rate: 0.001
-  optimizer: "adam"
+  optimizer: adam
 
 augmentation:
   rotation: 20
   zoom: 0.2
   horizontal_flip: true
+```
 
 ---
 
-## 🎯 Future Enhancements
+# 🧪 Technologies Used
 
-* Multi-label classification (Pokémon with multiple types)
-* Generation-based classification
-* Type prediction alongside species
-* ONNX model export for cross-platform compatibility
-* REST API deployment
-* Mobile app integration
-* Explainability (GradCAM visualizations)
-
----
-
-## 🧪 Technologies Used
-
-Python
-
-PyTorch
-
-Torchvision
-
-NumPy
-
-PIL
-
-tqdm
+- Python
+- PyTorch
+- Torchvision
+- NumPy
+- PIL
+- tqdm
 
 ---
 
-## 🌟 Future Improvements
+# 🚀 Future Enhancements
 
-Transfer Learning (ResNet50 / EfficientNet)
-
-Mixed Precision Training (AMP)
-
-Confusion Matrix Visualization
-
-Real-time Webcam Classification
-
-Web Deployment using Flask/Streamlit
+- Multi-label classification (Pokémon with multiple types)
+- Generation-based classification
+- Type prediction alongside species
+- ONNX model export for cross-platform compatibility
+- REST API deployment
+- Mobile app integration
+- Explainability using GradCAM
 
 ---
 
-## 🎯 Learning Outcomes
+# 🌟 Future Improvements
 
-* Deep understanding of CNN architecture
+- Transfer Learning (ResNet50 / EfficientNet)
+- Mixed Precision Training (AMP)
+- Confusion Matrix Visualization
+- Real-time Webcam Classification
+- Web Deployment using Flask or Streamlit
 
-* Dataset structuring for image classification
+---
 
-* Model training & evaluation
+# 🎯 Learning Outcomes
 
-* GPU acceleration in PyTorch
+- Deep understanding of CNN architecture
+- Dataset structuring for image classification
+- Model training and evaluation
+- GPU acceleration using PyTorch
+- Saving and loading trained models
 
-* Saving & loading trained models
+---
 
-📜 License
+# 📜 License
 
-This project is open-source and available for learning and educational purposes.
+This project is open-source and intended for learning and educational purposes.
